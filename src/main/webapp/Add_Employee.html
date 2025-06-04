@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Performance Analyzer</title>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap'>
+  <style>
+    * {
+      font-family: "Poppins";
+    }
+
+    body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      overflow-y: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #dde5f4;
+      height: 100vh;
+    }
+
+    .screen-1 {
+      background: #f1f7fe;
+      padding: 2.5em 4em;
+      display: flex;
+      height: 640px;
+      flex-direction: column;
+      border-radius: 30px;
+      box-shadow: 0 0 2em #e6e9f9;
+      gap: 10px;
+    }
+
+    .screen-1 #common {
+      display: flex;
+      flex-direction: column;
+      margin: 10px;
+    }
+
+    .screen-1 .logo {
+      margin: auto;
+      width: 230px; /* Reduced width */
+      height: 230px; /* Reduced height */
+    }
+
+    .screen-1 .username,
+    .screen-1 .email,
+    .screen-1 .age,
+    .screen-1 .employee-id,
+    .screen-1 .assigned-employer-id,
+    .screen-1 .department,
+    .screen-1 .location,
+    .screen-1 .education,
+    .screen-1 .recruitment-type,
+    .screen-1 .job-rating,
+    .screen-1 .awards,
+    .screen-1 .salary,
+    .screen-1 .satisfaction {
+      background: white;
+      box-shadow: 0 0 2em #e6e9f9;
+      padding: 1em 2em 1em 2em;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+      border-radius: 15px;
+      color: #4d4d4d;
+    }
+
+    .screen-1 input {
+      outline: none;
+      border: none;
+    }
+
+    .screen-1 input::placeholder {
+      color: black;
+      font-size: 0.9em;
+      opacity: 50%;
+    }
+
+    .screen-1 ion-icon {
+      color: #4d4d4d;
+      margin-bottom: -0.2em;
+    }
+
+    .screen-1 .login {
+      padding: 1em 2em 1em 2em;
+      background: #3e4684;
+      color: white;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    
+    .screen-1 .footer span a{
+        cursor: pointer;
+        padding-top: 3px;
+        text-decoration: none;
+        color: black;
+        font-size: 14px;
+    }
+    
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <form action="addEmp" method="post">
+    <div class="screen-1">
+      <!-- Page 1 -->
+      <div id="page1">
+          <center><svg class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewbox="0 0 640 480" xml:space="preserve">
+          <g transform="matrix(3.31 0 0 3.31 320.4 240.4)">
+            <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt;stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(61,71,133); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
+          </g>
+          <g transform="matrix(0.98 0 0 0.98 268.7 213.7)">
+            <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
+          </g>
+          <g transform="matrix(1.01 0 0 1.01 362.9 210.9)">
+            <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
+          </g>
+          <g transform="matrix(0.92 0 0 0.92 318.5 286.5)">
+            <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
+          </g>
+          <g transform="matrix(0.16 -0.12 0.49 0.66 290.57 243.57)">
+            <polygon style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" points="-50,-50 -50,50 50,50 50,-50 "></polygon>
+          </g>
+          <g transform="matrix(0.16 0.1 -0.44 0.69 342.03 248.34)">
+            <polygon style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" points="-50,-50 -50,50 50,50 50,-50 "></polygon>
+          </g>
+          </svg></center>
+
+        <div class="username" id="common">
+          <label for="username">Name</label>
+          <div class="sec-2">
+            <ion-icon name="person-circle-outline"></ion-icon>
+            <input type="text" name="username" placeholder="Enter Your Name" required/>
+          </div>
+        </div>
+
+        <div class="email" id="common">
+          <label for="email">Email</label>
+          <div class="sec-2">
+            <ion-icon name="mail-outline"></ion-icon>
+            <input type="email" name="email" placeholder="Enter Your Email Address" required/>
+          </div>
+        </div>
+
+        <div class="age" id="common">
+          <label for="age">Age</label>
+          <div class="sec-2">
+            <ion-icon name="calendar-outline"></ion-icon>
+            <input type="number" name="age" placeholder="Enter Your Age" required/>
+          </div>
+        </div>
+
+        <div class="employee-id" id="common">
+          <label for="employee_id">Employee ID</label>
+          <div class="sec-2">
+            <ion-icon name="id-card-outline"></ion-icon>
+            <input type="text" name="employee_id" placeholder="Enter Employee ID" required/>
+          </div>
+        </div>
+          
+
+        <center><button type="button" class="login" onclick="nextPage()" style="margin-top:10px;">Next</button>
+        <div class="footer" id="foot">
+            <span><a href="dashboard">Go Back</a></span>
+        </div>
+        </center>
+      </div>
+
+      <!-- Page 2 -->
+      <div id="page2" class="hidden">
+          <center><svg class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="300" height="300" viewbox="0 0 640 480" xml:space="preserve">
+          <g transform="matrix(3.31 0 0 3.31 320.4 240.4)">
+            <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt;stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(61,71,133); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
+          </g>
+          <g transform="matrix(0.98 0 0 0.98 268.7 213.7)">
+            <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
+          </g>
+          <g transform="matrix(1.01 0 0 1.01 362.9 210.9)">
+            <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
+          </g>
+          <g transform="matrix(0.92 0 0 0.92 318.5 286.5)">
+            <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
+          </g>
+          <g transform="matrix(0.16 -0.12 0.49 0.66 290.57 243.57)">
+            <polygon style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" points="-50,-50 -50,50 50,50 50,-50 "></polygon>
+          </g>
+          <g transform="matrix(0.16 0.1 -0.44 0.69 342.03 248.34)">
+            <polygon style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" points="-50,-50 -50,50 50,50 50,-50 "></polygon>
+          </g>
+          </svg></center>
+
+        <div class="assigned-employer-id" id="common">
+          <label for="assigned-employer_id">Assigned Employer ID</label>
+          <div class="sec-2">
+            <ion-icon name="id-card-outline"></ion-icon>
+            <input type="text" name="assigned-employer_id" placeholder="Enter ID of Assigned Employer" required/>
+          </div>
+        </div>
+          
+        <div class="department" id="common">
+          <label for="department">Department</label>
+          <div class="sec-2">
+            <ion-icon name="business-outline"></ion-icon>
+            <input type="text" name="department" placeholder="Enter Department" required/>
+          </div>
+        </div>
+
+        <div class="location" id="common">
+          <label for="location">Location</label>
+          <div class="sec-2">
+            <ion-icon name="location-outline"></ion-icon>
+            <input type="text" name="location" placeholder="Enter Location" required/>
+          </div>
+        </div>
+
+        <div class="education" id="common">
+          <label for="education">Education</label>
+          <div class="sec-2">
+            <ion-icon name="school-outline"></ion-icon>
+            <input type="text" name="education" placeholder="Enter Education" required/>
+          </div>
+        </div>
+
+
+        <center><button type="button" class="login" onclick="prevPage()" style="margin-top:10px;">Previous</button>
+            <button type="button" class="login" onclick="nextPage()" style="margin-top:10px;">Next</button></center>
+      </div>
+
+      <!-- Page 3 -->
+      <div id="page3" class="hidden">
+          <center><svg class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="300" height="300" viewbox="0 0 640 480" xml:space="preserve">
+          <g transform="matrix(3.31 0 0 3.31 320.4 240.4)">
+            <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt;stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(61,71,133); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
+          </g>
+          <g transform="matrix(0.98 0 0 0.98 268.7 213.7)">
+            <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
+          </g>
+          <g transform="matrix(1.01 0 0 1.01 362.9 210.9)">
+            <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
+          </g>
+          <g transform="matrix(0.92 0 0 0.92 318.5 286.5)">
+            <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
+          </g>
+          <g transform="matrix(0.16 -0.12 0.49 0.66 290.57 243.57)">
+            <polygon style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" points="-50,-50 -50,50 50,50 50,-50 "></polygon>
+          </g>
+          <g transform="matrix(0.16 0.1 -0.44 0.69 342.03 248.34)">
+            <polygon style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" points="-50,-50 -50,50 50,50 50,-50 "></polygon>
+          </g>
+          </svg></center>
+
+        <div class="recruitment-type" id="common">
+          <label for="recruitment_type">Recruitment Type</label>
+          <div class="sec-2">
+            <ion-icon name="contract-outline"></ion-icon>
+            <input type="text" name="recruitment_type" placeholder="Enter Recruitment Type" required/>
+          </div>
+        </div>  
+          
+        <div class="job-rating" id="common">
+          <label for="job_rating">Job Rating</label>
+          <div class="sec-2">
+            <ion-icon name="star-outline"></ion-icon>
+            <input type="number" name="job_rating" placeholder="Enter Job Rating(0-5)" required/>
+          </div>
+        </div>
+
+        <div class="awards" id="common">
+          <label for="awards">Awards</label>
+          <div class="sec-2">
+            <ion-icon name="trophy-outline"></ion-icon>
+            <input type="number" name="awards" placeholder="Enter Number of Awards" required/>
+          </div>
+        </div>
+
+        <div class="salary" id="common">
+          <label for="salary">Salary</label>
+          <div class="sec-2">
+            <ion-icon name="card"></ion-icon>
+            <input type="number" name="salary" placeholder="Enter Salary" required/>
+          </div>
+        </div>
+
+        <center><button type="button" class="login" onclick="prevPage()" style="margin-top:10px;">Previous</button>
+            <button type="button" class="login" onclick="nextPage()" style="margin-top:10px;">Next</button></center>
+        
+     </div>
+            
+        
+        <!-- Page 4 -->
+      <div id="page4" class="hidden">
+          <center><svg class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="300" height="300" viewbox="0 0 640 480" xml:space="preserve">
+          <g transform="matrix(3.31 0 0 3.31 320.4 240.4)">
+            <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt;stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(61,71,133); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
+          </g>
+          <g transform="matrix(0.98 0 0 0.98 268.7 213.7)">
+            <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
+          </g>
+          <g transform="matrix(1.01 0 0 1.01 362.9 210.9)">
+            <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
+          </g>
+          <g transform="matrix(0.92 0 0 0.92 318.5 286.5)">
+            <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
+          </g>
+          <g transform="matrix(0.16 -0.12 0.49 0.66 290.57 243.57)">
+            <polygon style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" points="-50,-50 -50,50 50,50 50,-50 "></polygon>
+          </g>
+          <g transform="matrix(0.16 0.1 -0.44 0.69 342.03 248.34)">
+            <polygon style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" points="-50,-50 -50,50 50,50 50,-50 "></polygon>
+          </g>
+          </svg></center>
+
+        <div class="satisfaction" id="common">
+          <label for="satisfaction">Satisfaction</label>
+          <div class="sec-2">
+            <ion-icon name="happy-outline"></ion-icon>
+            <input type="text" name="satisfaction" placeholder="Enter Yes or No" required/>
+          </div>
+        </div>
+
+        <center><button type="button" class="login" onclick="prevPage()" style="margin-top:10px;">Previous</button>
+            <button type="submit" class="login" style="margin-top:10px;">Add</button>
+            
+        <div class="footer" id="foot">
+            <span><a href="dashboard">Don't want to Add?</a></span>
+        </div>
+        </center>
+        
+      </div>    
+            
+            
+      
+    </div>
+  </form>
+
+  <script>
+    let currentPage = 1;
+
+    function nextPage() {
+      document.getElementById(`page${currentPage}`).classList.add('hidden');
+      currentPage++;
+      document.getElementById(`page${currentPage}`).classList.remove('hidden');
+    }
+
+    function prevPage() {
+      document.getElementById(`page${currentPage}`).classList.add('hidden');
+      currentPage--;
+      document.getElementById(`page${currentPage}`).classList.remove('hidden');
+    }
+  </script>
+</body>
+</html>

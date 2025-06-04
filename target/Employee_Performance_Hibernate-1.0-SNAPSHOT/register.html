@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Performance Analyzer</title>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap'>
+  <style>
+    * {
+      font-family: "Poppins";
+    }
+
+    body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      overflow-y: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #dde5f4;
+      height: 100vh;
+    }
+
+    .screen-1 {
+      background: #f1f7fe;
+      padding: 2.5em 4em;
+      display: flex;
+      height: 580px;
+      flex-direction: column;
+      border-radius: 30px;
+      box-shadow: 0 0 2em #e6e9f9;
+      gap: 10px;
+      position: relative;
+    }
+    
+    .screen-1 .logo {
+      margin-top: -5em;
+    }
+    
+    .screen-1 .username,
+    .screen-1 .email,
+    .screen-1 .emp_id,
+    .screen-1 .department,
+    .screen-1 .password {
+      background: white;
+      box-shadow: 0 0 2em #e6e9f9;
+      padding: 1em;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+      border-radius: 20px;
+      color: #4d4d4d;
+    }
+    
+    .screen-1 input {
+      outline: none;
+      border: none;
+      width: 100%;
+    }
+    
+    .screen-1 input::placeholder {
+      color: black;
+      font-size: 0.9em;
+      opacity: 50%;
+    }
+    
+    .screen-1 ion-icon {
+      color: #4d4d4d;
+      margin-bottom: -0.2em;
+    }
+    
+    .screen-1 .login,
+    .screen-1 .next-btn,
+    .screen-1 .prev-btn {
+      padding: 1em;
+      background: #3e4684;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 1em;
+    }
+    
+    .screen-1 .prev-btn {
+      background: #6c757d;
+      margin-right: 10px;
+    }
+    
+    .screen-1 .footer {
+      display: flex;
+      flex-direction: column;
+      font-size: 0.8em;
+      color: #5e5e5e;
+      margin-top: 8px;
+      align-items: center;
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      right: 0;
+    }
+    
+    .screen-1 .footer span {
+      cursor: pointer;
+    }
+    
+    .screen-1 .footer span a {
+      text-decoration: none;
+      color: black;
+      font-size: 14px;
+    }
+    
+    .form-page {
+      display: none;
+    }
+    
+    .form-page.active {
+      display: block;
+    }
+    
+    .button-group {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .button-group button {
+      flex: 1;
+    }
+    
+    .button-group .prev-btn {
+      margin-right: 10px;
+    }
+    
+    .sec-2 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+<form action="register" method="post">
+  <div class="screen-1">
+    <svg class="logo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="300" height="300" viewbox="0 0 640 480" xml:space="preserve">
+      <g transform="matrix(3.31 0 0 3.31 320.4 240.4)">
+        <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt;stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(61,71,133); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
+      </g>
+      <g transform="matrix(0.98 0 0 0.98 268.7 213.7)">
+        <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
+      </g>
+      <g transform="matrix(1.01 0 0 1.01 362.9 210.9)">
+        <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
+      </g>
+      <g transform="matrix(0.92 0 0 0.92 318.5 286.5)">
+        <circle style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" cx="0" cy="0" r="40"></circle>
+      </g>
+      <g transform="matrix(0.16 -0.12 0.49 0.66 290.57 243.57)">
+        <polygon style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" points="-50,-50 -50,50 50,50 50,-50 "></polygon>
+      </g>
+      <g transform="matrix(0.16 0.1 -0.44 0.69 342.03 248.34)">
+        <polygon style="stroke: rgb(0,0,0); stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" vector-effect="non-scaling-stroke" points="-50,-50 -50,50 50,50 50,-50 "></polygon>
+      </g>
+    </svg>
+    
+    <!-- Page 1 -->
+    <div class="form-page active" id="page1">
+      <div class="username" id="common">
+        <label for="username">Name</label>
+        <div class="sec-2">
+          <ion-icon name="person-circle-outline"></ion-icon>
+          <input type="text" name="username" placeholder="Enter Your Name" required/>
+        </div>
+      </div>
+      
+        <div class="email" id="common" style="margin-top: 15px;">
+        <label for="email">Email</label>
+        <div class="sec-2">
+          <ion-icon name="mail-outline"></ion-icon>
+          <input type="email" name="email" placeholder="Enter Your Email Address" required/>
+        </div>
+      </div>
+      
+      <div class="emp_id" id="common" style="margin-top: 15px;">
+        <label for="emp_id">Employer ID</label>
+        <div class="sec-2">
+          <ion-icon name="id-card-outline"></ion-icon>
+          <input type="text" name="employer_id" placeholder="Enter Your ID" required/>
+        </div>
+      </div>
+      
+        <center><button class="next-btn" type="button" onclick="showPage(2)">Next</button></center>
+    </div>
+    
+    <!-- Page 2 -->
+    <div class="form-page" id="page2">
+      <div class="department" id="common">
+        <label for="department">Department</label>
+        <div class="sec-2">
+          <ion-icon name="business-outline"></ion-icon>
+          <input type="text" name="department" placeholder="Enter Department" required/>
+        </div>
+      </div>
+      
+      <div class="password" id="common" style="margin-top: 15px;">
+        <label for="password">Password</label>
+        <div class="sec-2">
+          <ion-icon name="lock-closed-outline"></ion-icon>
+          <input type="password" name="password" placeholder="Enter Password" required/>
+        </div>
+      </div>
+      <center>
+      <div class="button-group">
+        <button class="prev-btn" type="button" onclick="showPage(1)">Previous</button>
+        <button class="login" type="submit">Register</button>
+      </div></center>
+    </div>
+    <br>
+    <center><div class="footer" id="foot">
+      <span><a href="login.html">Already have an account! Sign In</a></span>
+      <span><a href="index.html">Go Back</a></span>
+        </div></center>
+  </div>
+</form>
+
+<script>
+  function showPage(pageNumber) {
+    // Hide all pages
+    document.querySelectorAll('.form-page').forEach(page => {
+      page.classList.remove('active');
+    });
+    
+    // Show the selected page
+    document.getElementById(`page${pageNumber}`).classList.add('active');
+  }
+</script>
+</body>
+</html>

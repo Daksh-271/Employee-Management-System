@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="beans.ManagerBean" table="employer_data">
+		
+        <id name="id" type="int" column="id">
+            <generator class="identity"/>
+        </id>
+
+        <property name="name" type="string">
+            <column name="name"/>
+        </property>
+
+        <property name="email" type="string">
+            <column name="email"/>
+        </property>
+
+        <property name="employer_id" type="string">
+            <column name="employer_id"/>
+        </property>
+                
+        <property name="department" type="string">
+            <column name="department"/>
+        </property>
+        
+        <property name="password" type="string">
+            <column name="password"/>
+        </property>
+    </class>
+</hibernate-mapping>
+
+

@@ -1,0 +1,15 @@
+beans\EmployeeBean.class
+hibernateUtil\HibernateUtil.class
+com\gecp\emp_performance\servlets\Emp_Dashboard.class
+com\gecp\emp_performance\servlets\Delete_Employee.class
+com\gecp\emp_performance\servlets\AddForm.class
+com\gecp\emp_performance\servlets\Add_Employee.class
+com\gecp\emp_performance\JakartaRestConfiguration.class
+com\gecp\emp_performance\servlets\Login.class
+com\gecp\emp_performance\servlets\Update.class
+beans\ManagerBean.class
+com\gecp\emp_performance\servlets\EditForm.class
+com\gecp\emp_performance\resources\JakartaEE10Resource.class
+com\gecp\emp_performance\servlets\Logout.class
+com\gecp\emp_performance\servlets\Register.class
+helper\DbService.class

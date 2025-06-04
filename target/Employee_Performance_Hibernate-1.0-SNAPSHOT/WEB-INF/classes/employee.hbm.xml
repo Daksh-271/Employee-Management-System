@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="beans.EmployeeBean" table="emp_data">
+		
+        <id name="id" type="int" column="id">
+            <generator class="identity"/>
+        </id>
+
+        <property name="e_name" type="string">
+            <column name="e_name"/>
+        </property>
+
+        <property name="email" type="string">
+            <column name="email"/>
+        </property>
+
+        <property name="age" type="int">
+            <column name="age"/>
+        </property>
+        
+        <property name="emp_id" type="string">
+            <column name="emp_id"/>
+        </property>
+        
+        <property name="assigned_emp_id" type="string">
+            <column name="assigned_emp_id"/>
+        </property>
+                                                                                
+        <property name="department" type="string">
+            <column name="department"/>
+        </property>
+        
+        <property name="location" type="string">
+            <column name="location"/>
+        </property>
+        
+        <property name="education" type="string">
+            <column name="education"/>
+        </property>
+        
+        <property name="recruitment_type" type="string">
+            <column name="recruitment_type"/>
+        </property>
+        
+        <property name="job_rating" type="int">
+            <column name="job_rating"/>
+        </property>
+        
+        <property name="awards" type="int">
+            <column name="awards"/>
+        </property>
+        
+        <property name="salary" type="float">
+            <column name="salary"/>
+        </property>
+        
+        <property name="satisfaction" type="string">
+            <column name="satisfaction"/>
+        </property>
+    </class>
+</hibernate-mapping>
